@@ -44,6 +44,10 @@ public Properties p;
 			{
 				capabilities.setPlatform(Platform.MAC);
 			}
+			else if(os.equalsIgnoreCase("linux"))
+			{
+				capabilities.setPlatform(Platform.LINUX);
+			}
 			else
 			{
 				System.out.println("No matching OS");
@@ -57,12 +61,12 @@ public Properties p;
 			break;
 			case "edge":capabilities.setBrowserName("MicrosoftEdge");
 			break;
-			case "fire fox":capabilities.setBrowserName("firefox");
+			case "firefox":capabilities.setBrowserName("firefox");
 
 			default : System.out.println("No matching Browser");
 			}
 			
-			driver=new RemoteWebDriver(new URL("http://192.168.14.2:4444/wd/hub"),capabilities);
+			driver=new RemoteWebDriver(new URL("http://192.168.144.1:4444/wd/hub"),capabilities);
 		}
 		
 		if(p.getProperty("execution_env").equalsIgnoreCase("local"))
